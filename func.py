@@ -14,9 +14,6 @@ def click_mouse():
 
 if __name__ == '__main__':
     
-    im1 = screenshot()
-    im1.save('my_screenshot.png')
-
     
     """
 
