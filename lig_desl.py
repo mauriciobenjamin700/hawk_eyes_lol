@@ -3,8 +3,6 @@ from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from func import *
 
-
-
 class MeuApp(App):
     def build(self):
         layout = GridLayout(cols=1, rows=4)
@@ -26,8 +24,6 @@ class MeuApp(App):
         layout.add_widget(botao_modificar)
         return layout
     
-    
-
     def on_button_ligar_click(self):
         """
         desenvolver uma tela com um contador de tempo subindo e um uma mensagem escrita "Estou vigiando a fila por você durante " em baixo disso o tempo que o bot ficou ligado
