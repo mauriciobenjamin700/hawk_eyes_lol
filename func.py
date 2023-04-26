@@ -82,6 +82,16 @@ def see():
             break
 
 
+def msg_user():
+    """
+    Quando aceitar a fila, providenciar uma forma de notificar o usuário que a fila foi aceita e o mesmo deve voltar para o pc o mais rapido possivel
+    sugestões:
+        E-Mail
+        Whatzapp
+    """
+    pass
+
+
 if __name__ == '__main__':
     see()
     
