@@ -1,26 +1,20 @@
 from pyautogui import locateOnScreen,moveTo,click,position,screenshot
 from comparar_opencv import compara_img
 
+
 def local_img(name_img):
     location = locateOnScreen(name_img)
     
     return location
 
-def local_tela(delay=2):
-    if delay < 0 or delay > 10:
-        return 'Va se tratar!', 'https://www.youtube.com/watch?v=mTqMxlBLAHM'
-    else:
+def local_tela():
+    x,y = position()
 
-        import time
-        time.sleep(delay)
-
-        x,y = position()
-
-        return x,y
+    return x,y
 
 
 def move_mouse(x,y):
-    moveTo(x,y)
+    moveTo(x,y) 
 
 def click_mouse():
     click()
