@@ -7,11 +7,11 @@ class MeuApp(App):
     def build(self):
         layout = GridLayout(cols=1, rows=2)
 
-        botao_ligar = Button(text="Ligar")
+        botao_ligar = Button(text="Ligar", background_color="green")
         botao_ligar.bind(on_press=self.on_button_ligar_click)
         layout.add_widget(botao_ligar)
 
-        botao_desligar = Button(text="Desligar")
+        botao_desligar = Button(text="Desligar",background_color="red")
         botao_desligar.bind(on_press=self.on_button_desligar_click)
         layout.add_widget(botao_desligar)
 
