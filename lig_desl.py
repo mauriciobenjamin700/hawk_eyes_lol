@@ -3,15 +3,9 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from func import *
-from pynput.mouse import Listener
 import pyautogui
 
 
-def on_click(x, y, button, pressed):
-            if pressed:
-                pyautogui.hotkey('win', 'down')
-                local = local_tela()
-                save_axis(local[0],local[1])
 
 class MeuApp(App):
     def build(self):
@@ -45,8 +39,7 @@ class MeuApp(App):
         print("Imagine que o programa desligou")
     
     def on_button_gravar_click(self, instance):
-        with Listener(on_click=on_click) as listener:
-            listener.join()
+        print("Imagine que o programa")
     
     def on_button_modificar_click(self, instance):
         print("Imagine que o programa modificar")

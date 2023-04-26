@@ -7,14 +7,21 @@ def local_img(name_img):
     
     return location
 
-def local_tela():
-    x,y = position()
+def local_tela(delay=2):
+    if delay < 0 or delay > 10:
+        return 'Va se tratar!', 'https://www.youtube.com/watch?v=mTqMxlBLAHM'
+    else:
 
-    return x,y
+        import time
+        time.sleep(delay)
+
+        x,y = position()
+
+        return x,y
 
 
 def move_mouse(x,y):
-    moveTo(x,y) 
+    moveTo(x,y)
 
 def click_mouse():
     click()
