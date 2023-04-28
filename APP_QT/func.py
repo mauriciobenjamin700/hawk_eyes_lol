@@ -2,10 +2,10 @@ from pyautogui import locateOnScreen,moveTo,click,position,screenshot
 from comparar_opencv import compara_img
 
 
-def local_img(name_img='img/i.PNG'):
-    img = locateOnScreen(name_img, confidence=0.5)
+def local_img(name_img):
+    location = locateOnScreen(name_img)
     
-    return img
+    return location
 
 def local_tela(delay=2):
     if delay < 0 or delay > 10:
@@ -93,16 +93,8 @@ def msg_user():
 
 
 if __name__ == '__main__':
-    local = local_img('img/full_button.JPG')
-
-    while True:
-        if local == None:
-            print('Não Achei')
-            local = local_img('img/full_button.JPG')
-        else:
-            print('achei')
-            move_mouse(local[0]+(local[2]/2),local[1]+(local[3]*0.50))
-            break
+    see()
+    
 
 
     """
