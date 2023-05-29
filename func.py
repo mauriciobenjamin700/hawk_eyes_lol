@@ -81,6 +81,30 @@ def see():
         else:
             break
 
+def localiza_img_tela(path):
+    import time
+    from PIL import Image
+
+    # Carrega a imagem
+    imagem = Image.open(path)
+
+    # Obtém as dimensões da imagem
+    largura, altura = imagem.size
+
+    # Encontra a posição da imagem na tela
+    posicao = None
+    while posicao is None:
+        posicao = locateOnScreen(path)
+        time.sleep(1)
+
+    # Obtém as coordenadas x e y do canto superior esquerdo da imagem
+    x, y = posicao.left, posicao.top
+
+    # Exibe as dimensões e a posição da imagem na tela
+    return x,y,largura,altura
+
+
+
 
 def msg_user():
     """
@@ -93,19 +117,15 @@ def msg_user():
 
 
 if __name__ == '__main__':
-    local = local_img('img/full_button.JPG')
-
+    import time
     while True:
-        if local == None:
-            print('Não Achei')
-            local = local_img('img/full_button.JPG')
-        else:
-            print('achei')
-            move_mouse(local[0]+(local[2]/2),local[1]+(local[3]*0.50))
-            break
+        localiza_img_tela('img/LC.PNG')
+        time.sleep(1)
+        #if 0xFF == ord('esc'):
+        #    break
 
 
-    """
+    """q=
 
     localizando botão na tela de forma eficiente
 
